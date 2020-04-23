@@ -1,0 +1,24 @@
+---
+# task to install packages
+- yum:
+   name: rear, syslinux, genisoimage
+   state: present 
+# Configure ReaR params in config files
+- template:
+   src: local.conf.j2
+   dest: /etc/rear/local.conf
+   owner: root
+   group: root
+   mode: '0600'
+# Configure crontab for ReaR run
+- set_fact:
+   rear_cron_enabled: true
+  when: "rear_cron_min is defined and rear_cron_hour is defined"
+- cron:
+   name: ReaR backup crontab
+   minute: "{{rear_cron_min}}"
+   hour: "{{rear_cron_hour}}"
+   user: "{{rear_cron_user}}"
+   weekday: "{{rear_cron_day}}"
+   job: "/usr/sbin/rear -d -v mkbackup"
+  when: rear_cron_enabled

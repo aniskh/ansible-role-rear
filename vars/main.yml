@@ -1,0 +1,4 @@
+---
+# vars file for rear
+rear_cron_enabled: false
+

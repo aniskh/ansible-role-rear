@@ -1,0 +1,7 @@
+---
+# vars file for rear
+rear_output: 'ISO'
+rear_type: 'NETFS'
+rear_cron_user: root
+rear_cron_day: '*'
+
