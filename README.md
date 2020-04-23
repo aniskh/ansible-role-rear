@@ -1,4 +1,4 @@
-Role Name
+ReaR
 =========
 
 An Ansible role to install and configure Relax and Recover (ReaR) tool
