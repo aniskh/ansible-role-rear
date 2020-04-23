@@ -2,7 +2,7 @@ galaxy_info:
   author: Anis KHACHNAOUI
   description: install and configure ReaR ( Relax and Recover ) to backup system
   company:
-  role_name: aniskh-rear
+  role_name: rear
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
   # issue_tracker_url: http://example.com/issue/tracker
