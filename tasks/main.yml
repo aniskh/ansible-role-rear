@@ -1,4 +1,9 @@
 ---
+# Fail if backup url is not provided
+- name: ensure that  is rear_bkp_url defined
+  fail:
+    msg: You must provide the backup url
+  when: rear_bkp_url is not defined
 # task to install packages
 - name: Install packages
   yum:
